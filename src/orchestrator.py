@@ -5,13 +5,16 @@ from src.utils.dynamic_k import generate_k_value
 from src.utils.search import search
 app = FastAPI()
 
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "llama3.2:3b"
 
 upsert()  # Upsert documents into the vector store on startup
 
 # Load system prompt from file
-with open("system.md", "r", encoding="utf-8") as f:
+with open(os.path.join(BASE_DIR, "system.md"), "r", encoding="utf-8") as f:
     SYSTEM_PROMPT = f.read()
 
 @app.get("/ask")

@@ -135,8 +135,19 @@ LLM Model :
 ### Run
 
 ```powershel/bash
+uvicorn src.orchestrator:app  -reload
+```
 
-uvicorn orchestrator:app
+OR
+
+```powershel/bash
+uvicorn src.orchestrator:app  -reload
+```
+
+or
+
+```powershel/bash
+python -m uvicorn src.orchestrator:app
 ```
 
 ### Test API GET using POSTMAN
