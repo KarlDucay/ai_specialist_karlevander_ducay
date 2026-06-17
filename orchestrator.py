@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import requests
 from upsert import upsert
+from utils.dynamic_k import generate_k_value
 from utils.search import search
 app = FastAPI()
 
@@ -17,7 +18,8 @@ with open("system.md", "r", encoding="utf-8") as f:
 def ask_question(question: str):
     try: 
         # 1. Retrieve relevant chunks
-        results = search(question, k=3)
+        k = generate_k_value(question)        
+        results = search(question, k)
         
         context = "\n\n".join([
             r["chunk"] for r in results
@@ -30,7 +32,7 @@ def ask_question(question: str):
 
         QUESTION:
         {question}
-        
+
         Answer clearly and only use the context when relevant.
         """
         payload = {
