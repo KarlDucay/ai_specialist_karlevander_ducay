@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 import requests
-from upsert import upsert
-from utils.dynamic_k import generate_k_value
-from utils.search import search
+from src.upsert import upsert
+from src.utils.dynamic_k import generate_k_value
+from src.utils.search import search
 app = FastAPI()
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
@@ -19,7 +19,7 @@ def ask_question(question: str):
     try: 
         # 1. Retrieve relevant chunks
         k = generate_k_value(question)        
-        results = search(question, k)
+        results = search(question, k=k)
         
         context = "\n\n".join([
             r["chunk"] for r in results

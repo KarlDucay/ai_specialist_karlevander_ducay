@@ -1,0 +1,11 @@
+question,answer
+"What is the capital of France?","There is no mention of... "
+"Who is the president of the United States?","There is no mention of ..."
+"What is the largest mammal?","There is no mention of ..."
+"What is Platform Engineering","owns Beacon's backend, retrieval pipeline, and production infrastructure. Owns all production database access"
+"When are Flights should be booked at least","Flights should be booked at least 14 days in advance when possible"
+"Starter tier pricing","$99/month, up to 1,000 resolved conversations"
+"Growth tier pricing","$499/month, up to 10,000 resolved conversations."
+"Enterprise tier pricing","custom pricing, unlimited conversations, SSO, and a dedicated success manager"
+"Beacon integrates with which platforms","Beacon integrates with Zendesk, Intercom, and Salesforce Service Cloud out of the box"
+"Atlas Labs classifies all data into three levels , what are they?","Public, Internal, and Confidential"

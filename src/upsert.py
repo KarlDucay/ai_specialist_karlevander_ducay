@@ -1,7 +1,7 @@
 import os
-from utils.vector_store import get_index, get_metadatas_store
-from utils.embedder import embed
-from utils.chunk_text import chunk_text
+from src.utils.vector_store import get_index, get_metadatas_store
+from src.utils.embedder import embed
+from src.utils.chunk_text import chunk_text
 import numpy as np
 
 def load_corpus(folder="corpus"):
